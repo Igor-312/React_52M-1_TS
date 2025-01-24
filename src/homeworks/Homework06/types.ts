@@ -12,7 +12,7 @@ let names: string[] = ["Alice", "Bob", "Charlie"];
 
 let mixed: (number | string)[] = [1, "Alice", 2, "Bob"];
 
-let colors: Array<number | string> = [123, "red", "true", "blue"];
+let colors: (number | string | boolean)[] = [123, "red", true, "blue"];
 
 const add = (a: number, b: number): number => {
   return a + b;
