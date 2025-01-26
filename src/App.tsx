@@ -2,6 +2,7 @@ import './App.css'
 
 //lessons
 // import Lesson06 from './lessons/Lesson06/Lesson06'
+import Lesson07 from './lessons/Lesson07/Lesson07'
 
 //homeworks
 
@@ -15,6 +16,7 @@ function App() {
       {/* Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
       {/* <Consultation03/> */}
+      <Lesson07 />
     </div>
   )
 }
