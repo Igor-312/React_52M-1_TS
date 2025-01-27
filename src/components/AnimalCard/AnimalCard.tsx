@@ -1,7 +1,7 @@
 import "./styles.css";
 import { AnimalCardProps } from "./types";
 
-function AnimalCard({ animalName, animalSpecies, animalImg, children }) {
+function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalCardProps ) {
   return (
     <div className="animal-card-wrapper">
       <h3>{animalName}</h3>

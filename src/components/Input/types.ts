@@ -1,5 +1,7 @@
-export interface InputProps {
-  value: string;
+export interface InpitProps {
+  name: string;
+  type?: "text" | "email" | "password" | "tel" | "url" | "number";
   placeholder?: string;
-  onChange: (value: string) => void;
+  label?: string;
+  id?: string;
 }

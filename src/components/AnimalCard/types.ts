@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 export interface AnimalCardProps {
-  name: string;
-  species: string;
-  age?: number;
-  onAdopt: () => void;
+  animalName: string;
+  animalSpecies: string;
+  animalImg: string;
+  onchildren?: ReactNode;
 }

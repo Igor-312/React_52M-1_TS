@@ -1,7 +1,7 @@
 import "./styles.css";
-import { IndentProps } from "./types";
+import { InpitProps } from "./types";
 
-function Input({ name, type, placeholder, label, id }) {
+function Input({ name, type="text", placeholder, label, id }: InpitProps) {
   return (
     <div className="input-container">
       {label && <label htmlFor={id}>{label}</label>}
