@@ -4,5 +4,5 @@ export interface AnimalCardProps {
   animalName: string;
   animalSpecies: string;
   animalImg: string;
-  onchildren?: ReactNode;
+  children?: ReactNode;
 }
