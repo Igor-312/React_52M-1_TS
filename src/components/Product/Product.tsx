@@ -1,4 +1,4 @@
-import { ProductName, ProductPrice, ProductWrapper } from "./styles";
+import { ProductName, ProductWrapper } from "./styles";
 import { ProductProps } from "./types";
 
 function Product({ productName = "Unknown", productPrice }: ProductProps) {
@@ -6,7 +6,7 @@ function Product({ productName = "Unknown", productPrice }: ProductProps) {
     <ProductWrapper>
       <ProductName>{productName}</ProductName>
       {productPrice !== undefined && (
-        <ProductPrice>{productPrice} $</ProductPrice>
+        <div>{productPrice} $</div>
       )}
     </ProductWrapper>
   );

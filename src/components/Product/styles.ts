@@ -18,4 +18,3 @@ export const ProductWrapper = styled.div`
 
 export const ProductName = styled.h3``;
 
-export const ProductPrice = styled.div``;
