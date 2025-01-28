@@ -27,9 +27,9 @@ function Counter() {
         <Button name="-" type="button" onClick={onMinusClick} />
       </ButtonContainerStyled>
       <ResultContainerStyled>{counter}</ResultContainerStyled>
-      <div className="button-wrapper">
+      <ButtonContainerStyled>
         <Button name="+" type="button" onClick={onPlusClick} />
-      </div>
+      </ButtonContainerStyled>
     </CounterContainerStyled>
   );
 }

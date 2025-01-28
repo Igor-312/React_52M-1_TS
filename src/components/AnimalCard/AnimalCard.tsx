@@ -1,12 +1,11 @@
-import "./styles.css";
-import { AnimalCardStyled, ImageStyled } from "./styles";
+import { AnimalCardStyled, ImageStyled, Title, SpeciesBlock } from "./styles";
 import { AnimalCardProps } from "./types";
 
 function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalCardProps) {
   return (
     <AnimalCardStyled>
-      <h3>{animalName}</h3>
-      <div>{animalSpecies}</div>
+      <Title>{animalName}</Title>
+      <SpeciesBlock>{animalSpecies}</SpeciesBlock>
       <ImageStyled src={animalImg} alt="Animal"/>
       {/* prop children позволяет добавлять дополнительную структуру(JSX, компоненты) в компонент */}
       {children}

@@ -17,6 +17,9 @@ export const ImageStyled = styled.img`
   width: 100px;
 `;
 
+export const Title = styled.h3``
+export const SpeciesBlock = styled.div``
+
 // .animal-card-wrapper {
 //   display: flex;
 //   flex-direction: column;

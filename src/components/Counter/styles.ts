@@ -11,9 +11,11 @@ export const CounterContainerStyled = styled.div`
   border: 2px solid rgb(31, 31, 141);
   border-radius: 4px;
 `;
+
 export const ButtonContainerStyled = styled.div`
   width: 100px;
 `;
+
 export const ResultContainerStyled = styled.div`
   font-size: 24px;
   font-weight: bold;
