@@ -1,26 +1,25 @@
-// 1 способ - использование обычного css
-import "./styles.css";
-// 3 способ - использование библиотеки emotion (использование стилизаванных компанентов)
-import { BoxInfo, ContentContainer, Image, Text } from "./styles";
-import Example1 from "../../assets/avatar.jpg";
-import Example2 from "../../assets/logo.jpg";
+//1 способ - использование обычного css
+import './styles.css'
+//3 способ - использование библиотеки emotion (использование стилизованных компонентов)
+import { BoxInfo, ContentContainer, Image, Text } from './styles'
+import Example1 from '../../assets/avatar.jpg';
+import Example2 from '../../assets/logo.jpg';
+
 
 function Lesson08() {
-  // Объект для inline стилей  (2 способ)
+  //Объект для inline стилей (2 способ)
   const textStyles = {
-    color: "green",
-    fontSize: "26px",
-  };
+    color: 'blue',
+    fontSize: '26px'
+  }
 
   return (
-    <div className="lesson08-wrapper">
+    <div className='lesson08-wrapper'>
       {/* 2 способ - inline styles (передача объекта стилей в атрибут style) */}
-      <div style={{ color: "blueviolet", fontSize: "24px" }}>
-        Inline style example 1
-      </div>
+      <div style={{ color: 'blueviolet', fontSize: '24px' }}>Inline style example 1</div>
       <p style={textStyles}>Inline style example 2</p>
       <div style={textStyles}>Inline style example 3</div>
-      {/*  3 способ - использование библиотеки emotion */}
+      {/* 3 способ - использование библиотеки emotion */}
       <BoxInfo primary>
         <ContentContainer>
           <Image src={Example1} />
@@ -34,7 +33,7 @@ function Lesson08() {
         </ContentContainer>
       </BoxInfo>
     </div>
-  );
+  )
 }
 
-export default Lesson08;
+export default Lesson08

@@ -1,21 +1,22 @@
 import { useState } from "react";
+
 import Button from "../Button/Button";
 import "./styles.css";
 
 function Feedback() {
   const [likes, setLikes] = useState<number>(0);
-  const [dislike, setDislike] = useState(0);
+  const [dislike, setDislike] = useState<number>(0);
   console.log("render");
 
   const addLike = (): void => {
     setLikes((prevValue) => prevValue + 1);
   };
 
-  const addDislike = (): void => {
+  const addDislike = ():void => {
     setDislike((prevValue) => prevValue + 1);
   };
 
-  const resetResult = (): void => {
+  const resetResults = (): void => {
     setLikes(0);
     setDislike(0);
   };
@@ -32,7 +33,7 @@ function Feedback() {
           <Button name="DISLIKE" type="button" onClick={addDislike} />
         </div>
       </div>
-      <Button name="RESET RESULTS" type="button" onClick={resetResult} />
+      <Button name="RESET RESULTS" type="button" onClick={resetResults} />
     </div>
   );
 }
