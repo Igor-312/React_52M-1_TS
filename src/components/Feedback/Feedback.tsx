@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../Button/Button";
+import Button from "components/Button/Button";
 import { FeedbackContainer, FeedbackResultContainer, LikeDislikeContainer, Result } from "./styles";
 
 function Feedback() {
