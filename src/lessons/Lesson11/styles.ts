@@ -37,7 +37,7 @@ export const Button = styled.button`
   }
 `;
 
-export const errorMessage = styled.button`
+export const ErrorMessage = styled.button`
 width: 600px;
   padding: 20px;
   background-color: #eb9378;
