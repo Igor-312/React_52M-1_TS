@@ -1,57 +1,87 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import { useFormik } from "formik";
+import * as Yup from 'yup'
 
-import { EmployeeFormContainer, StyledInput, ErrorText, Button, Title } from "./styles";
+import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer } from "./styles";
+import { EmployeeFormValues } from "./types";
+import Input from "components/Input/Input";
+import Button from "components/Button/Button";
 
-function EmployeeForm () {
-  const validationSchema = Yup.object({
+function EmployeeForm() {
+  const validationSchema = Yup.object().shape({
     fullName: Yup.string()
-      .min(5, "Минимум 5 символов")
-      .max(50, "Максимум 50 символов")
-      .required("Обязательное поле"),
+      .required('Required field')
+      .min(5, 'Min 2 symbols')
+      .max(50, 'Max 50 symbols')
+    ,
     age: Yup.number()
-      .min(18, "Минимальный возраст 18")
-      .max(80, "Максимальный возраст 80")
-      .required("Обязательное поле"),
-    jobTitle: Yup.string().max(30, "Максимум 30 символов").optional(),
-  });
+      .required('Required field')
+      .min(18, 'Min age 18')
+      .max(80, 'Max age 18')
+      .typeError('Type number')
+    ,
+    jobTitle: Yup.string()
+      .max(30, 'Max 50 symbols')
+    ,
+    agreement: Yup.boolean()
+      .oneOf([true], 'Accept agreement')
+  })
+
+  const formik = useFormik({
+    initialValues: {
+      fullName: '',
+      age: '',
+      jobTitle: '',
+      agreement: false
+    } as EmployeeFormValues,
+    validationSchema,
+    validateOnChange: false,
+    onSubmit: (values: EmployeeFormValues) => {
+      console.table(values);
+    }
+  })
 
   return (
-    <EmployeeFormContainer >
-        <Title>EmployeeForm</Title>
-      <Formik
-        initialValues={{ fullName: "", age: "", jobTitle: "" }}
-        validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log("Форма отправлена:", values);
-        }}
-      >
-        {({ handleSubmit }) => (
-          <Form onSubmit={handleSubmit}>
-            <div>
-              <label>Full Name:</label>
-              <Field as={StyledInput} name="fullName" />
-              <ErrorMessage name="fullName" component={ErrorText} />
-            </div>
-
-            <div>
-              <label>Age:</label>
-              <Field as={StyledInput} name="age" type="number" />
-              <ErrorMessage name="age" component={ErrorText} />
-            </div>
-
-            <div>
-              <label>Job Title:</label>
-              <Field as={StyledInput} name="jobTitle" />
-              <ErrorMessage name="jobTitle" component={ErrorText} />
-            </div>
-
-            <Button type="submit">Create</Button>
-          </Form>
-        )}
-      </Formik>
+    <EmployeeFormContainer onSubmit={formik.handleSubmit}>
+      <Input
+        name='fullName'
+        id='full_name_id'
+        label='Full Name*'
+        placeholder="Enter your full name"
+        value={formik.values.fullName}
+        onChange={formik.handleChange}
+        error={formik.errors.fullName}
+      />
+      <Input
+        name='age'
+        id='age_id'
+        label='Age*'
+        placeholder="Enter your age"
+        value={formik.values.age}
+        onChange={formik.handleChange}
+        error={formik.errors.age}
+      />
+      <Input
+        name='jobTitle'
+        id='job_title_id'
+        label='Job Title'
+        placeholder="Enter your job title"
+        value={formik.values.jobTitle}
+        onChange={formik.handleChange}
+        error={formik.errors.jobTitle}
+      />
+      <CheckboxContainer>
+        <Checkbox
+          type='checkbox'
+          id='agree_id'
+          name='agreement'
+          checked={formik.values.agreement}
+          onChange={formik.handleChange}
+        />
+        <CheckboxLabel htmlFor="agree_id">I Agree</CheckboxLabel>
+      </CheckboxContainer>
+      <Button name='CREATE' type='submit' disabled={!formik.values.agreement}/>
     </EmployeeFormContainer>
-  );
-};
+  )
+}
 
-export default EmployeeForm;
+export default EmployeeForm
