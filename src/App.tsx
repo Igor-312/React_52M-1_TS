@@ -22,6 +22,10 @@ import User from 'pages/Users/components/User/User'
 // import Homework09 from './homeworks/Homework09/Homework09'
 // import Homework10 from './homeworks/Homework10/Homework10'
 // import Homework12 from 'homeworks/Homework12/Homework12'
+import Clients from 'pages/Clients/Clients'
+import Facebook from 'pages/Clients/components/Facebook/Facebook'
+import Google from 'pages/Clients/components/Google/Google'
+import Amazon from 'pages/Clients/components/Amazon/Amazon'
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03'
@@ -44,6 +48,12 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/user' element={<User />} />
+          <Route path='/clients' element={<Clients/>}/>
+          <Route path='/clients/facebook' element={<Facebook/>}/>
+          <Route path='/clients/google' element={<Google/>}/>
+          <Route path='/clients/amazon' element={<Amazon/>}/>
+          {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
+          <Route path='*' element='Page not found'/>
         </Routes>
       </Layout>
       {/* --Topic: TypeScript - Introduction */}
