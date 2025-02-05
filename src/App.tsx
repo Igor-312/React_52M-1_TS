@@ -15,6 +15,7 @@ import Home from 'pages/Home/Home'
 import About from 'pages/About/About'
 import Users from 'pages/Users/Users'
 import User from 'pages/Users/components/User/User'
+import Lesson14 from 'lessons/Lesson14/Lesson14'
 
 
 //homeworks
@@ -48,12 +49,14 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/user' element={<User />} />
-          <Route path='/clients' element={<Clients/>}/>
-          <Route path='/clients/facebook' element={<Facebook/>}/>
-          <Route path='/clients/google' element={<Google/>}/>
-          <Route path='/clients/amazon' element={<Amazon/>}/>
+          <Route path='/clients' element={<Clients />} />
+          <Route path='/clients/facebook' element={<Facebook />} />
+          <Route path='/clients/google' element={<Google />} />
+          <Route path='/clients/amazon' element={<Amazon />} />
+          {/* --Topic: useContext */}
+          <Route path='/lesson14' element={<Lesson14 />} />
           {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
-          <Route path='*' element='Page not found'/>
+          <Route path='*' element='Page not found' />
         </Routes>
       </Layout>
       {/* --Topic: TypeScript - Introduction */}
